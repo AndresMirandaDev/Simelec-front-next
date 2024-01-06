@@ -7,6 +7,8 @@ import SideBar from './SideBar';
 import AuthProvider from './auth/provider';
 import UserAvatar from './UserAvatar';
 import { getServerSession } from 'next-auth';
+import { useEffect, useState } from 'react';
+import LoadingScreen from './components/LoadingScreen';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,8 +22,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerSession();
-
   return (
     <html lang="en" data-theme="light">
       <body className={inter.className}>
@@ -31,7 +31,7 @@ export default async function RootLayout({
               <SideBar />
               <main>
                 <UserAvatar />
-                <Container className="ml-20 p-5 ">{children}</Container>
+                <Container className="ml-20 md:ml-0 pt-5">{children}</Container>
               </main>
             </div>
           </Theme>

@@ -21,7 +21,7 @@ const SideBar = () => {
     <nav>
       <div
         className={classNames({
-          'bg-cyan-500 p-5 mr-5 fixed h-full overflow-auto ease-in-out transition-all duration-300 w-44 justify-center shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]':
+          'bg-[rgb(46,110,130)] p-5 mr-5 fixed h-full overflow-auto ease-in-out transition-all duration-300 w-44 z-40 justify-center shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]':
             true,
           'translate-x-0': open,
           '-translate-x-2/3': !open,
@@ -62,7 +62,7 @@ const NavLinks = ({ open }: NavlinkProps) => {
 
   const links = [
     { label: 'Dashboard', href: '/dashboard', icon: <MdDashboard /> },
-    { label: 'Ventas', href: '/sales', icon: <FaChartBar /> },
+    { label: 'Balances', href: '/sales', icon: <FaChartBar /> },
   ];
 
   return (
@@ -72,8 +72,8 @@ const NavLinks = ({ open }: NavlinkProps) => {
           <li key={link.href} className="flex items-center mb-4">
             <Link
               className={classNames({
-                'text-zinc-600': link.href !== currentPath,
-                'text-slate-200 text-2xl transition-all':
+                'text-zinc-400': link.href !== currentPath,
+                'text-[rgb(236,134,28)] text-2xl transition-all':
                   link.href === currentPath,
                 'hover:text-slate-300 transition-colors': true,
                 'flex items-center w-full mt-5': true,
