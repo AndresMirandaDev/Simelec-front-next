@@ -1,14 +1,11 @@
+import { Container, Theme } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
-import '@radix-ui/themes/styles.css';
-import { Container, Theme } from '@radix-ui/themes';
 import SideBar from './SideBar';
-import AuthProvider from './auth/provider';
 import UserAvatar from './UserAvatar';
-import { getServerSession } from 'next-auth';
-import { useEffect, useState } from 'react';
-import LoadingScreen from './components/LoadingScreen';
+import AuthProvider from './auth/provider';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 

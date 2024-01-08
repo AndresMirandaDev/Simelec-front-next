@@ -123,7 +123,7 @@ const SignInPage = () => {
                       </Form.Control>
                     </Form.Field>
                     <Form.Submit asChild>
-                      <Button size="4">
+                      <Button size="4" className="bg-[var(--accent-9)]">
                         <Flex align="center" gap="2">
                           <RiLoginCircleLine />
                           <Text>Iniciar Sesión</Text>

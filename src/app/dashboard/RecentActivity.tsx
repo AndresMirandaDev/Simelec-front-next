@@ -67,7 +67,7 @@ const RecentActivity = () => {
         <Text className="text-zinc-600 text-xl font-bold">
           Actividad Reciente
         </Text>
-        <Button>Ver Actividad</Button>
+        <Button variant="outline">Ver Actividad</Button>
       </Box>
       <Table.Root variant="ghost" size="3">
         <Table.Header>

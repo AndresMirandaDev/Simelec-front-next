@@ -16,8 +16,8 @@ import { getServerSession } from 'next-auth';
 const SideBar = () => {
   const { status } = useSession();
   const [open, setOpen] = useState(false);
-
-  if (status === 'unauthenticated' || status === 'loading') return null;
+  const currentPath = usePathname();
+  if (currentPath === '/' || currentPath === '/signin') return null;
 
   return (
     <nav>

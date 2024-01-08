@@ -1,9 +1,11 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import StockQuantityBar from '../components/stock/StockQuantityBar';
 import { Box, Button, Card, Grid, Text } from '@radix-ui/themes';
 import { FiAlertTriangle } from 'react-icons/fi';
 
 import RecentActivity from './RecentActivity';
+import LoadingScreen from '../components/LoadingScreen';
 
 const criticalMaterials = [
   { stock: 20, max: 100, name: 'Cables de cobre', id: 1 },
@@ -16,6 +18,24 @@ const criticalMaterials = [
 ];
 
 const Dashboard = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkIfInitialLoad = !localStorage.getItem('isInitialLoad');
+
+    if (checkIfInitialLoad) {
+      // It's the initial load (refreshing the page)
+      localStorage.setItem('isInitialLoad', 'true');
+      setLoading(true); // Set loading to true when refreshing
+    } else {
+      // It's not the initial load
+      localStorage.removeItem('isInitialLoad');
+      setLoading(false); // Set loading to false after rendering
+    }
+  }, []);
+
+  if (loading) return <LoadingScreen />;
+
   return (
     <Grid gap="4" columns={{ sm: '1', md: '2' }}>
       <Card className="flex-col shadow-lg p-3">
@@ -26,7 +46,7 @@ const Dashboard = () => {
           <Text className="text-xl text-zinc-600 font-bold">
             Materiales Críticos
           </Text>
-          <Button>Ver Materiales</Button>
+          <Button variant="outline">Ver Materiales</Button>
         </Box>
         {criticalMaterials.map((material) => {
           return (
