@@ -8,6 +8,8 @@ import { MdDashboard } from 'react-icons/md';
 import { FaChartBar } from 'react-icons/fa';
 
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoMdClose } from 'react-icons/io';
+
 import { useSession } from 'next-auth/react';
 import { getServerSession } from 'next-auth';
 
@@ -36,12 +38,22 @@ const SideBar = () => {
         <Container>
           <Flex direction="column">
             <Box>
-              <GiHamburgerMenu
-                className="float-right mb-5 cursor-pointer text-2xl text-slate-400 "
-                onClick={() => {
-                  setOpen(!open);
-                }}
-              />
+              {!open && (
+                <GiHamburgerMenu
+                  className="float-right mb-5 cursor-pointer text-2xl text-slate-400 "
+                  onClick={() => {
+                    setOpen(!open);
+                  }}
+                />
+              )}
+              {open && (
+                <IoMdClose
+                  className="float-right mb-5 cursor-pointer text-2xl text-slate-400 "
+                  onClick={() => {
+                    setOpen(!open);
+                  }}
+                />
+              )}
             </Box>
             <NavLinks open={open} />
           </Flex>
