@@ -21,7 +21,7 @@ const SideBar = () => {
     <nav>
       <div
         className={classNames({
-          'bg-[rgb(46,110,130)] p-5 mr-5 fixed h-full overflow-auto ease-in-out transition-all duration-300 w-44 z-40 justify-center shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]':
+          'bg-[rgb(243,244,246)] p-5 mr-5 fixed h-full overflow-auto ease-in-out transition-all duration-300 w-44 z-40 justify-center shadow-slate-400 shadow-lg':
             true,
           'translate-x-0': open,
           '-translate-x-2/3': !open,
@@ -37,7 +37,7 @@ const SideBar = () => {
           <Flex direction="column">
             <Box>
               <GiHamburgerMenu
-                className="float-right mb-5 cursor-pointer text-2xl text-slate-300 "
+                className="float-right mb-5 cursor-pointer text-2xl text-slate-400 "
                 onClick={() => {
                   setOpen(!open);
                 }}
@@ -73,11 +73,12 @@ const NavLinks = ({ open }: NavlinkProps) => {
             <Link
               className={classNames({
                 'text-zinc-400': link.href !== currentPath,
-                'text-[rgb(236,134,28)] text-2xl transition-all':
-                  link.href === currentPath,
-                'hover:text-slate-300 transition-colors': true,
-                'flex items-center w-full mt-5': true,
-                'justify-end text-2xl ': !open,
+                'bg-slate-300 transition-all p-2':
+                  link.href === currentPath && open,
+                'hover:text-zinc-600 transition-colors text-zinc-600': true,
+                'flex items-center w-full mt-2  rounded-md font-bold': true,
+                'justify-end text-2xl': !open,
+                'text-[var(--accent-9)]': !open && link.href === currentPath,
               })}
               href={link.href}
             >

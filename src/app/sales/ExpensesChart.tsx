@@ -15,18 +15,18 @@ import {
 
 const ExpensesChart = () => {
   const data = [
-    { amount: 2000000, month: 'January' },
-    { amount: 500000, month: 'February' },
-    { amount: 1000000, month: 'March' },
-    { amount: 600000, month: 'April' },
+    { amount: 2000000, month: 'Ene' },
+    { amount: 500000, month: 'Feb' },
+    { amount: 1000000, month: 'Mar' },
+    { amount: 600000, month: 'Abr' },
     { amount: 900000, month: 'May' },
-    { amount: 1000000, month: 'June' },
-    { amount: 1800000, month: 'July' },
-    { amount: 1400000, month: 'August' },
-    { amount: 1600000, month: 'September' },
-    { amount: 1200000, month: 'October' },
-    { amount: 200000, month: 'November' },
-    { amount: 300000, month: 'December' },
+    { amount: 1000000, month: 'Jun' },
+    { amount: 1800000, month: 'Jul' },
+    { amount: 1400000, month: 'Ago' },
+    { amount: 1600000, month: 'Sep' },
+    { amount: 1200000, month: 'Oct' },
+    { amount: 200000, month: 'Nov' },
+    { amount: 300000, month: 'Dic' },
   ];
 
   return (

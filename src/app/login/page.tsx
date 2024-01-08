@@ -8,7 +8,7 @@ import { RiLoginCircleLine } from 'react-icons/ri';
 
 const LoginPage = () => {
   return (
-    <div className="flex h-screen w-screen  justify-center bg-cyan-700">
+    <div className="flex h-screen w-screen  justify-center items-center bg-cyan-700">
       <Flex
         direction="column"
         justify="center"

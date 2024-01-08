@@ -1,8 +1,41 @@
 import React from 'react';
+import StockQuantityBar from '../components/stock/StockQuantityBar';
+import { Box, Card, Grid, Text } from '@radix-ui/themes';
+import RecentActivity from './RecentActivity';
+
+const criticalMaterials = [
+  { stock: 20, max: 100, name: 'Cables de cobre', id: 1 },
+  { stock: 10, max: 50, name: 'Baterías recargables', id: 2 },
+  { stock: 15, max: 30, name: 'Fusibles eléctricos', id: 3 },
+  { stock: 5, max: 25, name: 'Interruptores de circuito', id: 4 },
+  { stock: 18, max: 40, name: 'Transformadores', id: 5 },
+  { stock: 8, max: 35, name: 'Conectores eléctricos', id: 6 },
+  { stock: 12, max: 60, name: 'Terminales aislados', id: 7 },
+];
 
 const Dashboard = () => {
-  
-  return <div>Dashboard</div>;
+  return (
+    <Grid gap="4" columns={{ sm: '1', md: '2' }}>
+      <Card className="flex-col shadow-lg p-3">
+        <Box className="mb-5">
+          <Text className="text-xl text-zinc-600 font-bold">
+            Materiales Críticos
+          </Text>
+        </Box>
+        {criticalMaterials.map((material) => {
+          return (
+            <StockQuantityBar
+              key={material.id}
+              name={material.name}
+              stock={material.stock}
+              max={material.max}
+            />
+          );
+        })}
+      </Card>
+      <RecentActivity />
+    </Grid>
+  );
 };
 
 export default Dashboard;

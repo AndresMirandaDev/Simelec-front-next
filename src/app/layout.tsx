@@ -31,7 +31,7 @@ export default async function RootLayout({
               <SideBar />
               <main>
                 <UserAvatar />
-                <Container className="ml-20 md:ml-0 pt-5">{children}</Container>
+                <Container className="ml-20 md:ml-0">{children}</Container>
               </main>
             </div>
           </Theme>

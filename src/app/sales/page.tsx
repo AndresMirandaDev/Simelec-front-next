@@ -1,14 +1,16 @@
-import { Box, Flex, Text } from '@radix-ui/themes';
+import { Box, Flex, Grid, Text } from '@radix-ui/themes';
 import React from 'react';
 import ExpensesChart from './ExpensesChart';
 import MaterialsChart from './MaterialsChart';
+import TotalExpenses from './TotalExpenses';
 
 const SalesPage = () => {
   return (
-    <Flex className="flex-col lg:flex-row " gap="4">
+    <Grid columns={{ sm: '1', md: '2' }} flow="row" gap="4">
       <ExpensesChart />
       <MaterialsChart />
-    </Flex>
+      <TotalExpenses />
+    </Grid>
   );
 };
 
