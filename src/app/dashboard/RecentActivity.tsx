@@ -49,7 +49,7 @@ const RecentActivity = () => {
   const columnHeaderStyle = 'text-neutral-100';
 
   return (
-    <Card className="p-3 ">
+    <Card className="p-3 shadow-lg">
       <Box className="mb-5">
         <Text className="text-zinc-600 text-xl font-bold">
           Actividad Reciente

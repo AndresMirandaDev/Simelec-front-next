@@ -38,13 +38,13 @@ const TotalExpenses = () => {
       <Text className="text-xl text-zinc-100 ">Gastos totales</Text>
       <Section size="1" className=" justify-start p-5 flex">
         <Text className="text-4xl font-bold text-zinc-100 text-center">
-          $ {totalAmount}
+          ${totalAmount}
         </Text>
       </Section>
       <Text className="text-xl text-zinc-100">Ingresos totales</Text>
       <Section size="1" className=" justify-start p-5 flex">
         <Text className="text-4xl font-bold text-zinc-100 text-center">
-          $ {totalAmount + 2000000}
+          ${totalAmount + 2000000}
         </Text>
       </Section>
       <Text className="text-xl text-zinc-100">Balance</Text>
@@ -61,7 +61,7 @@ const TotalExpenses = () => {
         )}
 
         <Text className="text-4xl font-bold text-zinc-100 text-center">
-          $ {totalAmount + 2000000 - totalAmount}
+          ${totalAmount + 2000000 - totalAmount}
         </Text>
       </Section>
     </Card>
