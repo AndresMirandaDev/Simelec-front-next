@@ -1,6 +1,8 @@
 import React from 'react';
 import StockQuantityBar from '../components/stock/StockQuantityBar';
-import { Box, Card, Grid, Text } from '@radix-ui/themes';
+import { Box, Button, Card, Grid, Text } from '@radix-ui/themes';
+import { FiAlertTriangle } from 'react-icons/fi';
+
 import RecentActivity from './RecentActivity';
 
 const criticalMaterials = [
@@ -17,10 +19,14 @@ const Dashboard = () => {
   return (
     <Grid gap="4" columns={{ sm: '1', md: '2' }}>
       <Card className="flex-col shadow-lg p-3">
-        <Box className="mb-5">
+        <Box className="mb-5 flex items-center justify-between">
+          <Box className="text-xl mr-3">
+            <FiAlertTriangle />
+          </Box>
           <Text className="text-xl text-zinc-600 font-bold">
             Materiales Críticos
           </Text>
+          <Button>Ver Materiales</Button>
         </Box>
         {criticalMaterials.map((material) => {
           return (

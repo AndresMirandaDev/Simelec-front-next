@@ -1,5 +1,15 @@
-import { Badge, Box, Card, Table, TableBody, Text } from '@radix-ui/themes';
+import {
+  Badge,
+  Box,
+  Button,
+  Card,
+  Table,
+  TableBody,
+  Text,
+} from '@radix-ui/themes';
 import React from 'react';
+import { TbActivity } from 'react-icons/tb';
+
 const activity = [
   {
     order: '#27445',
@@ -50,10 +60,14 @@ const RecentActivity = () => {
 
   return (
     <Card className="p-3 shadow-lg">
-      <Box className="mb-5">
+      <Box className="mb-5 flex items-center justify-between">
+        <Box className="mr-3 text-xl">
+          <TbActivity />
+        </Box>
         <Text className="text-zinc-600 text-xl font-bold">
           Actividad Reciente
         </Text>
+        <Button>Ver Actividad</Button>
       </Box>
       <Table.Root variant="ghost" size="3">
         <Table.Header>
