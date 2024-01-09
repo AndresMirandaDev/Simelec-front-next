@@ -1,3 +1,4 @@
+'use client';
 import {
   Badge,
   Box,
@@ -7,8 +8,9 @@ import {
   TableBody,
   Text,
 } from '@radix-ui/themes';
-import React from 'react';
+import React, { useState } from 'react';
 import { TbActivity } from 'react-icons/tb';
+import Pagination from '../components/Pagination';
 
 const activity = [
   {
@@ -40,15 +42,53 @@ const activity = [
     totalAmount: 400000,
   },
   {
-    order: '#27449',
+    order: '#27149',
     status: 'pending',
     date: '2024-01-14',
     project: 'Project 5',
     totalAmount: 600000,
   },
+  {
+    order: '#27349',
+    status: 'pending',
+    date: '2024-01-14',
+    project: 'Project 6',
+    totalAmount: 600000,
+  },
+  {
+    order: '#25449',
+    status: 'pending',
+    date: '2024-01-14',
+    project: 'Project 7',
+    totalAmount: 600000,
+  },
+  {
+    order: '#17449',
+    status: 'pending',
+    date: '2024-01-14',
+    project: 'Project 8',
+    totalAmount: 600000,
+  },
+  {
+    order: '#27441',
+    status: 'pending',
+    date: '2024-01-14',
+    project: 'Project 9',
+    totalAmount: 600000,
+  },
+  {
+    order: '#27433',
+    status: 'pending',
+    date: '2024-01-14',
+    project: 'Project 10',
+    totalAmount: 600000,
+  },
 ];
 
 const RecentActivity = () => {
+  const [currentPage, setPage] = useState(0);
+  const [pageSize, setPageSize] = useState(5);
+
   const statusBadge: { dispatched: string; pending: string; arrived: string } =
     {
       dispatched: 'Despachado',
@@ -90,37 +130,45 @@ const RecentActivity = () => {
           </Table.Row>
         </Table.Header>
         <TableBody>
-          {activity.map((a) => {
-            return (
-              <Table.Row key={a.order}>
-                <Table.Cell className="font-bold text-zinc-600">
-                  {a.order}
-                </Table.Cell>
-                <Table.Cell>
-                  <Badge
-                    color={
-                      a.status === 'dispatched'
-                        ? 'purple'
-                        : a.status === 'pending'
-                        ? 'yellow'
-                        : 'green'
-                    }
-                  >
-                    {statusBadge[a.status]}
-                  </Badge>
-                </Table.Cell>
-                <Table.Cell className="text-zinc-600">
-                  {new Date(a.date).toLocaleDateString()}
-                </Table.Cell>
-                <Table.Cell className="text-zinc-600">{a.project}</Table.Cell>
-                <Table.Cell className="text-zinc-600">
-                  ${a.totalAmount}
-                </Table.Cell>
-              </Table.Row>
-            );
-          })}
+          {activity
+            .slice(currentPage * pageSize, currentPage * pageSize + pageSize)
+            .map((a) => {
+              return (
+                <Table.Row key={a.order}>
+                  <Table.Cell className="font-bold text-zinc-600">
+                    {a.order}
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Badge
+                      color={
+                        a.status === 'dispatched'
+                          ? 'purple'
+                          : a.status === 'pending'
+                          ? 'yellow'
+                          : 'green'
+                      }
+                    >
+                      {statusBadge[a.status]}
+                    </Badge>
+                  </Table.Cell>
+                  <Table.Cell className="text-zinc-600">
+                    {new Date(a.date).toLocaleDateString()}
+                  </Table.Cell>
+                  <Table.Cell className="text-zinc-600">{a.project}</Table.Cell>
+                  <Table.Cell className="text-zinc-600">
+                    ${a.totalAmount}
+                  </Table.Cell>
+                </Table.Row>
+              );
+            })}
         </TableBody>
       </Table.Root>
+      <Pagination
+        itemCount={activity.length}
+        pageSize={pageSize}
+        currentPage={currentPage}
+        setPage={setPage}
+      />
     </Card>
   );
 };

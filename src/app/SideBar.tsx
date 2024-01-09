@@ -6,6 +6,7 @@ import { Box, Container, Flex, Text } from '@radix-ui/themes';
 import { usePathname } from 'next/navigation';
 import { MdDashboard } from 'react-icons/md';
 import { FaChartBar } from 'react-icons/fa';
+import { TbActivity } from 'react-icons/tb';
 
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
@@ -75,6 +76,7 @@ const NavLinks = ({ open }: NavlinkProps) => {
   const links = [
     { label: 'Dashboard', href: '/dashboard', icon: <MdDashboard /> },
     { label: 'Balances', href: '/sales', icon: <FaChartBar /> },
+    { label: 'Actividad', href: '/activity', icon: <TbActivity /> },
   ];
 
   return (
