@@ -11,6 +11,7 @@ import {
 import React, { useState } from 'react';
 import { TbActivity } from 'react-icons/tb';
 import Pagination from '../components/Pagination';
+import Link from 'next/link';
 
 const activity = [
   {
@@ -89,12 +90,11 @@ const RecentActivity = () => {
   const [currentPage, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(5);
 
-  const statusBadge: { dispatched: string; pending: string; arrived: string } =
-    {
-      dispatched: 'Despachado',
-      pending: 'Pendiente',
-      arrived: 'Entregada',
-    };
+  const statusBadge: { [key: string]: string } = {
+    dispatched: 'Despachado',
+    pending: 'Pendiente',
+    arrived: 'Entregada',
+  };
 
   const columnHeaderStyle = 'text-neutral-100';
 
@@ -107,7 +107,9 @@ const RecentActivity = () => {
         <Text className="text-zinc-600 text-xl font-bold">
           Actividad Reciente
         </Text>
-        <Button variant="outline">Ver Actividad</Button>
+        <Button variant="outline">
+          <Link href={'/activity'}>Ver Actividad</Link>
+        </Button>
       </Box>
       <Table.Root variant="ghost" size="3">
         <Table.Header>

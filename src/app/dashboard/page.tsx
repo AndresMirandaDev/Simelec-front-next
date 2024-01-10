@@ -6,6 +6,7 @@ import { FiAlertTriangle } from 'react-icons/fi';
 
 import RecentActivity from './RecentActivity';
 import LoadingScreen from '../components/LoadingScreen';
+import { useRouter } from 'next/navigation';
 
 const criticalMaterials = [
   { stock: 20, max: 100, name: 'Cables de cobre', id: 1 },

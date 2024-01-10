@@ -13,6 +13,9 @@ import { IoMdClose } from 'react-icons/io';
 
 import { useSession } from 'next-auth/react';
 import { getServerSession } from 'next-auth';
+import Image from 'next/image';
+
+import logo from '../../public/assets/images/cropped-logo-simelec-con-slogan.png';
 
 const SideBar = () => {
   const { status } = useSession();
@@ -24,10 +27,10 @@ const SideBar = () => {
     <nav>
       <div
         className={classNames({
-          'bg-[rgb(243,244,246)] p-5 mr-5 fixed h-full overflow-auto ease-in-out transition-all duration-300 w-44 z-40 justify-center shadow-slate-400 shadow-lg':
+          'bg-[rgb(243,244,246)] p-5 mr-5 fixed h-full overflow-auto ease-in-out transition-all duration-300 w-56 z-40 justify-center shadow-slate-400 shadow-lg':
             true,
           'translate-x-0': open,
-          '-translate-x-2/3': !open,
+          '-translate-x-40': !open,
         })}
         // className={classNames({
         //   'lg:hidden': true, // Hide on large screens
@@ -55,6 +58,14 @@ const SideBar = () => {
                   }}
                 />
               )}
+            </Box>
+            <Box
+              className={classNames({
+                'mb-5': true,
+                hidden: !open,
+              })}
+            >
+              <Image src={logo} alt="logo" />
             </Box>
             <NavLinks open={open} />
           </Flex>
@@ -96,7 +107,13 @@ const NavLinks = ({ open }: NavlinkProps) => {
               })}
               href={link.href}
             >
-              <Box>{link.icon}</Box>
+              <Box
+                className={classNames({
+                  'text-[var(--accent-9)]': link.href === currentPath,
+                })}
+              >
+                {link.icon}
+              </Box>
               <Box
                 className={classNames({
                   'ml-2': true,
