@@ -11,6 +11,9 @@ import DateVisualizer from './DateVisualizer';
 import MostUsedMaterials from './MostUsedMaterials';
 import CriticalMaterials from '../materials/CriticalMaterials';
 import TotalExpenses from '../balances/TotalExpenses';
+import InventoryValue from './InventoryValue';
+import ActiveProjects from './ActiveProjects';
+import SubInventories from './SubInventories';
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true);
@@ -33,6 +36,11 @@ const Dashboard = () => {
 
   return (
     <Grid gap="4" columns={{ xs: '1', sm: '1', md: '1', lg: '2', xl: '2' }}>
+      <Box className="md:col-span-2 flex w-full gap-4 p-5">
+        <InventoryValue />
+        <ActiveProjects />
+        <SubInventories />
+      </Box>
       <CriticalMaterials />
       <TotalExpenses />
       <Box className="md:col-span-2">
