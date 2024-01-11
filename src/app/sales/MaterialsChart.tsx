@@ -3,9 +3,11 @@ import { Card } from '@radix-ui/themes';
 import React from 'react';
 import {
   Bar,
+  Brush,
   CartesianGrid,
   ComposedChart,
   Line,
+  ReferenceLine,
   ResponsiveContainer,
   Text,
   Tooltip,
@@ -33,6 +35,8 @@ const MaterialsChart = () => {
 
           <Tooltip />
           <CartesianGrid strokeDasharray="3 3" />
+          <ReferenceLine y={0} stroke="#000" />
+          <Brush dataKey="name" height={30} stroke="#8884d8" />
           <Bar
             dataKey={'amount'}
             style={{ fill: 'var(--accent-9)' }}

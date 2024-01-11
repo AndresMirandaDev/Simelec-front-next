@@ -11,6 +11,8 @@ import {
   Tooltip,
   Text,
   Line,
+  ReferenceLine,
+  Brush,
 } from 'recharts';
 
 const ExpensesChart = () => {
@@ -37,6 +39,8 @@ const ExpensesChart = () => {
           <XAxis dataKey={'month'} className="hidden md:block" />
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
+          <ReferenceLine y={0} stroke="#000" />
+          <Brush dataKey="name" height={30} stroke="#8884d8" />
           <Bar
             dataKey={'amount'}
             barSize={40}
