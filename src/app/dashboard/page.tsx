@@ -36,7 +36,7 @@ const Dashboard = () => {
 
   return (
     <Grid gap="4" columns={{ xs: '1', sm: '1', md: '1', lg: '2', xl: '2' }}>
-      <Box className="md:col-span-2 flex w-full gap-4 p-5">
+      <Box className="md:col-span-2 flex flex-col md:flex-row w-full gap-4 p-5">
         <InventoryValue />
         <ActiveProjects />
         <SubInventories />
