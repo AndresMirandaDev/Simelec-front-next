@@ -6,6 +6,7 @@ import StockQuantityBar from '../components/stock/StockQuantityBar';
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
 import Pagination from '../components/Pagination';
+import Link from 'next/link';
 
 const criticalMaterials = [
   { stock: 20, max: 100, name: 'Cables de cobre', id: 1 },
@@ -38,7 +39,9 @@ const CriticalMaterials = () => {
           Materiales Críticos
         </Text>
         {currentPath !== '/materials' && (
-          <Button variant="outline">Ver Materiales</Button>
+          <Button variant="outline">
+            <Link href={'/materials'}>Ver materiales</Link>
+          </Button>
         )}
       </Box>
       <Box>

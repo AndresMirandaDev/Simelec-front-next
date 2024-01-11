@@ -1,5 +1,5 @@
 'use client';
-import { Card } from '@radix-ui/themes';
+import { Box, Card } from '@radix-ui/themes';
 import {
   Cell,
   Legend,
@@ -9,6 +9,8 @@ import {
   Text,
   Tooltip,
 } from 'recharts';
+
+import { FaBoxesPacking } from 'react-icons/fa6';
 
 const data01 = [
   {
@@ -62,10 +64,15 @@ const COLORS = [
 
 const MostUsedMaterials = () => {
   return (
-    <Card style={{ width: '100%' }} className="shadow-lg ">
-      <Text className="md:text-xl font-bold text-zinc-600">
-        Materiales más solicitados
-      </Text>
+    <Card style={{ width: '100%' }} className="shadow-lg p-3">
+      <Box className="flex justify-center items-center">
+        <Box className="text-xl mr-3">
+          <FaBoxesPacking />
+        </Box>
+        <Text className="md:text-xl font-bold text-zinc-600 text-center">
+          Materiales más solicitados
+        </Text>
+      </Box>
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie

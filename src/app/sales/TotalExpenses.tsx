@@ -34,7 +34,10 @@ const TotalExpenses = () => {
     setTotal(total);
   };
   return (
-    <Card style={{ backgroundColor: 'rgb(46,110,130)' }} className="shadow-lg">
+    <Card
+      style={{ backgroundColor: 'rgb(46,110,130)' }}
+      className="shadow-lg p-3"
+    >
       <Text className="text-xl text-zinc-100 ">Gastos totales</Text>
       <Section size="1" className=" justify-start p-5 flex">
         <Text className="text-4xl font-bold text-zinc-100 text-center">

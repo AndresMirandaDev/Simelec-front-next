@@ -68,7 +68,7 @@ const MaterialsTable = () => {
 
   const columnHeaderStyle = 'text-neutral-100';
   return (
-    <Card className="shadow-lg ps-3">
+    <Card className="shadow-lg p-3">
       <Box className="mb-5 flex items-center justify-center">
         <Box className="mr-3 text-xl">
           <FaBoxOpen />
