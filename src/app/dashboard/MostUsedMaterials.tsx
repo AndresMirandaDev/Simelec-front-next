@@ -39,7 +39,7 @@ const data01 = [
 ];
 
 const COLORS = [
-  '#0004FE',
+  '#0000BB',
   '#00C49F',
   '#FFBB28',
   '#FF8042',
@@ -62,7 +62,7 @@ const COLORS = [
 
 const MostUsedMaterials = () => {
   return (
-    <Card style={{ width: '100%' }} className="shadow-lg">
+    <Card style={{ width: '100%' }} className="shadow-lg ">
       <Text className="md:text-xl font-bold text-zinc-600">
         Materiales más solicitados
       </Text>

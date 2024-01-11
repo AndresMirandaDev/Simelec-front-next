@@ -6,6 +6,7 @@ import SideBar from './SideBar';
 import UserAvatar from './UserAvatar';
 import AuthProvider from './auth/provider';
 import './globals.css';
+import MainContainer from './MainContainer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,7 +29,7 @@ export default async function RootLayout({
               <SideBar />
               <main>
                 <UserAvatar />
-                <Container className="ml-20 md:ml-0">{children}</Container>
+                <MainContainer>{children}</MainContainer>
               </main>
             </div>
           </Theme>

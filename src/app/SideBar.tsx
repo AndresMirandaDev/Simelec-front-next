@@ -10,6 +10,7 @@ import { TbActivity } from 'react-icons/tb';
 
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
+import { FaBoxOpen } from 'react-icons/fa6';
 
 import { useSession } from 'next-auth/react';
 import { getServerSession } from 'next-auth';
@@ -88,6 +89,7 @@ const NavLinks = ({ open }: NavlinkProps) => {
     { label: 'Dashboard', href: '/dashboard', icon: <MdDashboard /> },
     { label: 'Balances', href: '/sales', icon: <FaChartBar /> },
     { label: 'Actividad', href: '/activity', icon: <TbActivity /> },
+    { label: 'Materiales', href: '/materials', icon: <FaBoxOpen /> },
   ];
 
   return (

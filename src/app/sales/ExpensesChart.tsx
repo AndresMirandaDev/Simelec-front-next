@@ -30,7 +30,7 @@ const ExpensesChart = () => {
   ];
 
   return (
-    <Card style={{ width: '100%' }} className="shadow-lg">
+    <Card style={{ width: '100%' }} className="shadow-lg ">
       <Text className="md:text-2xl">Gastos año 2023</Text>
       <ResponsiveContainer width={'100%'} height={300}>
         <BarChart data={data}>
