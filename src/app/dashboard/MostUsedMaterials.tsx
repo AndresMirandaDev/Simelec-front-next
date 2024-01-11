@@ -1,20 +1,20 @@
 'use client';
 import { Card } from '@radix-ui/themes';
-import React from 'react';
 import {
+  Cell,
   Legend,
   Pie,
   PieChart,
   ResponsiveContainer,
   Text,
   Tooltip,
-  YAxis,
 } from 'recharts';
 
 const data01 = [
   {
     name: 'Fusibles eléctricos',
     value: 400,
+    fill: '#f6f6f6',
   },
   {
     name: 'Interruptores de circuito',
@@ -38,6 +38,28 @@ const data01 = [
   },
 ];
 
+const COLORS = [
+  '#0004FE',
+  '#00C49F',
+  '#FFBB28',
+  '#FF8042',
+  '#4CAF50',
+  '#2196F3',
+  '#FF5252',
+  '#FF4081',
+  '#E040FB',
+  '#FFD740',
+  '#536DFE',
+  '#FF6E40',
+  '#69F0AE',
+  '#00BFA5',
+  '#FF8A65',
+  '#FFD54F',
+  '#8E24AA',
+  '#00E676',
+  '#795548',
+];
+
 const MostUsedMaterials = () => {
   return (
     <Card style={{ width: '100%' }} className="shadow-lg">
@@ -54,7 +76,15 @@ const MostUsedMaterials = () => {
             cy="50%"
             outerRadius={80}
             fill="#8884d8"
-          />
+            paddingAngle={2}
+          >
+            {data01.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie>
           <Tooltip />
           <Legend />
         </PieChart>
