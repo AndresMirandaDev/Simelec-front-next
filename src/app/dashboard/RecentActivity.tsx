@@ -107,7 +107,7 @@ const RecentActivity = () => {
         <Text className="text-zinc-600 text-xl font-bold">
           Actividad Reciente
         </Text>
-        <Button variant="outline">
+        <Button variant="outline" className="cursor-pointer">
           <Link href={'/activity'}>Ver Actividad</Link>
         </Button>
       </Box>

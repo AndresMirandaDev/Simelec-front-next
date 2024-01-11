@@ -1,5 +1,7 @@
 'use client';
-import { Box, Card, Section, Text } from '@radix-ui/themes';
+import { Box, Button, Card, Section, Text } from '@radix-ui/themes';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 import { BiSolidUpArrow } from 'react-icons/bi';
@@ -22,6 +24,7 @@ const data = [
 
 const TotalExpenses = () => {
   const [totalAmount, setTotal] = useState(0);
+  const currentPath = usePathname();
 
   useEffect(() => {
     setupData();
@@ -38,7 +41,16 @@ const TotalExpenses = () => {
       style={{ backgroundColor: 'rgb(46,110,130)' }}
       className="shadow-lg p-3"
     >
-      <Text className="text-xl text-zinc-100 ">Gastos totales</Text>
+      <Box className="flex justify-between">
+        <Box>
+          <Text className="text-xl text-zinc-100 ">Gastos totales</Text>
+        </Box>
+        {currentPath !== '/balances' && (
+          <Button className="cursor-pointer">
+            <Link href={'/balances'}>Ver balances</Link>
+          </Button>
+        )}
+      </Box>
       <Section size="1" className=" justify-start p-5 flex">
         <Text className="text-4xl font-bold text-zinc-100 text-center">
           ${totalAmount}

@@ -39,7 +39,7 @@ const CriticalMaterials = () => {
           Materiales Críticos
         </Text>
         {currentPath !== '/materials' && (
-          <Button variant="outline">
+          <Button variant="outline" className="cursor-pointer">
             <Link href={'/materials'}>Ver materiales</Link>
           </Button>
         )}

@@ -12,11 +12,11 @@ const MaterialsPage = () => {
   return (
     <Grid columns={{ xs: '1', sm: '1', md: '1', lg: '2', xl: '2' }} gap="4">
       <Flex gap="2">
-        <Button>
+        <Button className="cursor-pointer">
           <FaPlus />
           Añadir material
         </Button>
-        <Button>
+        <Button className="cursor-pointer">
           <RiLoopRightLine />
           Reabastecer
         </Button>
