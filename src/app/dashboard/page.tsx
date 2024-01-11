@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 import DateVisualizer from './DateVisualizer';
 import MostUsedMaterials from './MostUsedMaterials';
 import CriticalMaterials from '../materials/CriticalMaterials';
+import TotalExpenses from '../sales/TotalExpenses';
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true);
@@ -33,7 +34,7 @@ const Dashboard = () => {
   return (
     <Grid gap="4" columns={{ xs: '1', sm: '1', md: '1', lg: '2', xl: '2' }}>
       <CriticalMaterials />
-      <MostUsedMaterials />
+      <TotalExpenses />
       <Box className="md:col-span-2">
         <RecentActivity />
       </Box>

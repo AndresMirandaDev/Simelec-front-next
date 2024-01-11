@@ -1,10 +1,11 @@
 'use client';
 import { Card, Box, Button, Text } from '@radix-ui/themes';
-import React from 'react';
+import React, { useState } from 'react';
 import { FiAlertTriangle } from 'react-icons/fi';
 import StockQuantityBar from '../components/stock/StockQuantityBar';
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
+import Pagination from '../components/Pagination';
 
 const criticalMaterials = [
   { stock: 20, max: 100, name: 'Cables de cobre', id: 1 },
@@ -18,6 +19,8 @@ const criticalMaterials = [
 
 const CriticalMaterials = () => {
   const currentPath = usePathname();
+  const [currentPage, setCurrentPage] = useState(0);
+  const [pageSize, setPageSize] = useState(5);
 
   return (
     <Card className="flex-col shadow-lg p-3">
@@ -38,16 +41,28 @@ const CriticalMaterials = () => {
           <Button variant="outline">Ver Materiales</Button>
         )}
       </Box>
-      {criticalMaterials.map((material) => {
-        return (
-          <StockQuantityBar
-            key={material.id}
-            name={material.name}
-            stock={material.stock}
-            max={material.max}
-          />
-        );
-      })}
+      <Box>
+        {criticalMaterials
+          .slice(currentPage * pageSize, currentPage * pageSize + pageSize)
+          .map((material) => {
+            return (
+              <StockQuantityBar
+                key={material.id}
+                name={material.name}
+                stock={material.stock}
+                max={material.max}
+              />
+            );
+          })}
+      </Box>
+      <Box>
+        <Pagination
+          itemCount={criticalMaterials.length}
+          currentPage={currentPage}
+          pageSize={pageSize}
+          setPage={setCurrentPage}
+        />
+      </Box>
     </Card>
   );
 };

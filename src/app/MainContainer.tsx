@@ -10,7 +10,8 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   return (
     <Container
       className={classNames({
-        'ml-20': status === 'authenticated',
+        'ml-16': status === 'authenticated',
+        'bg-slate-200 p-3': true,
       })}
     >
       {children}

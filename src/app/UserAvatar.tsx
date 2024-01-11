@@ -17,27 +17,28 @@ import Link from 'next/link';
 const UserAvatar = () => {
   const { data, status } = useSession();
 
-  if (status === 'unauthenticated' || status === 'loading') return null;
+  if (status === 'unauthenticated') return null;
 
   return (
-    <nav className="hidden md:block w-screen shadow-sm mb-5">
+    <nav className="w-screen min-w-full shadow-sm bg-[var(--accent-9)]">
       <Flex justify="end" mr="5">
         <Box className="text-slate-500 text-2xl flex justify-center items-center h-12 w-12 ">
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>
-              <Box className="cursor-pointer text-cyan-700 text-4xl">
-                <FaUserCircle />
+              <Box className="cursor-pointer text-slate-100 text-4xl">
+                {status === 'authenticated' && <FaUserCircle />}
+                {status === 'loading' && <Skeleton />}
               </Box>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content className="p-2">
               <DropdownMenu.Label>
                 <Text className="text-center capitalize" size="2">
-                  {data!.user!.name}
+                  {data?.user?.name}
                 </Text>
               </DropdownMenu.Label>
               <DropdownMenu.Label>
                 <Text className="text-center" size="2">
-                  {data!.user!.email}
+                  {data?.user?.email}
                 </Text>
               </DropdownMenu.Label>
               <DropdownMenu.Item className="bg-slate-300">
