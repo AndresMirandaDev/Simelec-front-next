@@ -87,7 +87,7 @@ const NavLinks = ({ open }: NavlinkProps) => {
 
   const links = [
     { label: 'Dashboard', href: '/dashboard', icon: <MdDashboard /> },
-    { label: 'Balances', href: '/sales', icon: <FaChartBar /> },
+    { label: 'Balances', href: '/balances', icon: <FaChartBar /> },
     { label: 'Actividad', href: '/activity', icon: <TbActivity /> },
     { label: 'Materiales', href: '/materials', icon: <FaBoxOpen /> },
   ];

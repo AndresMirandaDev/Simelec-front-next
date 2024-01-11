@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 import DateVisualizer from './DateVisualizer';
 import MostUsedMaterials from './MostUsedMaterials';
 import CriticalMaterials from '../materials/CriticalMaterials';
-import TotalExpenses from '../sales/TotalExpenses';
+import TotalExpenses from '../balances/TotalExpenses';
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true);

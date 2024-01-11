@@ -6,6 +6,7 @@ import Link from 'next/link';
 import MostUsedMaterials from '../dashboard/MostUsedMaterials';
 import { FaPlus } from 'react-icons/fa6';
 import { RiLoopRightLine } from 'react-icons/ri';
+import ReEnteredMaterials from './ReEnteredMaterials';
 
 const MaterialsPage = () => {
   return (
@@ -17,7 +18,7 @@ const MaterialsPage = () => {
         </Button>
         <Button>
           <RiLoopRightLine />
-          Reabastecimento de material
+          Reabastecer
         </Button>
       </Flex>
       <Box className="lg:col-span-2">
@@ -25,6 +26,9 @@ const MaterialsPage = () => {
       </Box>
       <CriticalMaterials />
       <MostUsedMaterials />
+      <Box className="md:col-span-2">
+        <ReEnteredMaterials />
+      </Box>
     </Grid>
   );
 };
